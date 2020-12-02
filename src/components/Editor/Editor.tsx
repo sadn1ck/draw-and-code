@@ -1,25 +1,26 @@
 import React from "react";
-import "codemirror/lib/codemirror.css";
-import "codemirror/theme/material.css";
-import {
-  IUnControlledCodeMirror,
-  UnControlled as CodeMirror,
-} from "react-codemirror2";
 
-require("codemirror/mode/python/python");
-require("codemirror/mode/javascript/javascript");
+import AceEditor from "react-ace";
+
+import "ace-builds/src-noconflict/mode-java";
+import "ace-builds/src-noconflict/mode-c_cpp";
+import "ace-builds/src-noconflict/theme-github";
+
+const onChange = (newValue: string) => {
+  console.log("change", newValue, typeof newValue);
+};
 
 const Editor: React.FC = (): JSX.Element => {
   return (
-    <CodeMirror
-      value="<h1>I ♥ react-codemirror2</h1>"
-      options={{
-        mode: "python",
-        theme: "material",
-        lineNumbers: true,
-      }}
-      onChange={(editor: IUnControlledCodeMirror, data, value) => {}}
-    />
+    <div>
+      <AceEditor
+        mode="c_cpp"
+        theme="github"
+        onChange={onChange}
+        height="95vh"
+        fontSize="16px"
+      />
+    </div>
   );
 };
 
