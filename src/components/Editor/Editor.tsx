@@ -17,16 +17,34 @@ const languages: Array<Array<string>> = [
 const themes: Array<string> = ["monokai", "dracula", "github"];
 
 const Editor: React.FC = (): JSX.Element => {
-  const [currentLanguage, setLanguage] = useState("c_cpp");
+  // language settings
+  const defaultLanguage: any = localStorage.getItem("draw-n-code-lang");
+  const [currentLanguage, setLanguage] = useState(
+    defaultLanguage === null ? "c_cpp" : defaultLanguage
+  );
   const changeLanguage = (evt: React.ChangeEvent<HTMLSelectElement>) => {
     setLanguage(evt.target.value);
+    localStorage.setItem("draw-n-code-lang", evt.target.value);
     console.log(evt.target.value, currentLanguage);
   };
+  // code settings
+  const defaultCode: any = localStorage.getItem("draw-n-code");
+  const [code, setCode] = useState(defaultCode);
+  const onCodeChange = (newCode: string) => {
+    setCode(newCode);
+    localStorage.setItem("draw-n-code", newCode);
+    console.log(newCode);
+  };
 
-  const [currentTheme, setTheme] = useState("github");
+  // theme settings
+  const defaultTheme: any = localStorage.getItem("draw-n-code-theme");
+  const [currentTheme, setTheme] = useState(
+    defaultTheme === null ? "monokai" : defaultTheme
+  );
   const changetheme = (evt: React.ChangeEvent<HTMLSelectElement>) => {
     setTheme(evt.target.value);
-    console.log(evt.target.value, currentTheme);
+    localStorage.setItem("draw-n-code-theme", evt.target.value);
+    // console.log(evt.target.value, currentTheme);
   };
 
   return (
@@ -66,10 +84,9 @@ const Editor: React.FC = (): JSX.Element => {
         theme={currentTheme}
         height="95vh"
         fontSize="16px"
+        value={code}
+        onChange={onCodeChange}
         setOptions={{
-          enableBasicAutocompletion: true,
-          enableLiveAutocompletion: true,
-          enableSnippets: false,
           showLineNumbers: true,
           tabSize: 2,
         }}

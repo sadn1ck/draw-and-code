@@ -4,8 +4,10 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
+  padding: 1rem;
+  background-color: lightcoral;
 }
 .ace_editor {
   width: 50vw !important;
