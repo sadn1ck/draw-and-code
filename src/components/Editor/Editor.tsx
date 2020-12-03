@@ -35,7 +35,7 @@ const Editor: React.FC = (): JSX.Element => {
   const changeLanguage = (evt: React.ChangeEvent<HTMLSelectElement>) => {
     setLanguage(evt.target.value);
     localStorage.setItem("draw-n-code-lang", evt.target.value);
-    console.log(evt.target.value, currentLanguage);
+    // console.log(evt.target.value, currentLanguage);
   };
   // code settings
   const defaultCode: any = localStorage.getItem("draw-n-code");
@@ -43,7 +43,7 @@ const Editor: React.FC = (): JSX.Element => {
   const onCodeChange = (newCode: string) => {
     setCode(newCode);
     localStorage.setItem("draw-n-code", newCode);
-    console.log(newCode);
+    // console.log(newCode);
   };
 
   // theme settings

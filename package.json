@@ -1,5 +1,6 @@
 {
-  "name": "VizCode",
+  "name": "draw-and-code",
+  "description": "Draw and explain youe code without pointlessly switching tabs!",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
