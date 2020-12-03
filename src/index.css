@@ -1,18 +1,48 @@
 * {
   overflow-x: hidden;
 }
-/* .drawing-board-wrapper {
-  /* height: 90vh !important; */
-  /* width: 80% !important; */
-/* } */
 
-/* .code-editor-wrapper {
-  display: fixed;
-  top: 5%;
-  right: 0%;
-}  */
 .grid-container {
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-gap: 20px;
+}
+.ace_editor {
+  width: 50vw !important;
+  height: 95vh !important;
+}
+
+button:focus {
+  outline: none;
+}
+
+.code-open,
+.code-close {
+  box-shadow: 5px;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #000;
+  position: fixed;
+  z-index: 10000;
+  top: 50vh;
+}
+.code-open {
+  right: 2vw;
+}
+.code-close {
+  left: 30vw;
+}
+.icons {
+  height: 2rem;
+  width: 2rem;
+  display: grid;
+  place-items: center;
+}
+.code-open:hover,
+.code-close:hover {
+  opacity: 75%;
+  cursor: pointer;
 }

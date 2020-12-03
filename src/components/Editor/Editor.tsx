@@ -13,19 +13,22 @@ const languages: Array<Array<string>> = [
   ["java", "Java"],
   ["python", "Python3"],
 ];
+
 const themes: Array<string> = ["monokai", "dracula", "github"];
+
 const Editor: React.FC = (): JSX.Element => {
   const [currentLanguage, setLanguage] = useState("c_cpp");
   const changeLanguage = (evt: React.ChangeEvent<HTMLSelectElement>) => {
     setLanguage(evt.target.value);
     console.log(evt.target.value, currentLanguage);
   };
+
   const [currentTheme, setTheme] = useState("github");
   const changetheme = (evt: React.ChangeEvent<HTMLSelectElement>) => {
     setTheme(evt.target.value);
     console.log(evt.target.value, currentTheme);
-    // console.log(evt.target);
   };
+
   return (
     <div>
       <div className={"dropdown-wrapper grid-container"}>
