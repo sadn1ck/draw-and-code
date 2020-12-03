@@ -16,6 +16,16 @@ const languages: Array<Array<string>> = [
 
 const themes: Array<string> = ["monokai", "dracula", "github"];
 
+const fontSizes: Array<string> = [
+  "10px",
+  "12px",
+  "14px",
+  "16px",
+  "18px",
+  "20px",
+  "22px",
+];
+
 const Editor: React.FC = (): JSX.Element => {
   // language settings
   const defaultLanguage: any = localStorage.getItem("draw-n-code-lang");
@@ -44,9 +54,24 @@ const Editor: React.FC = (): JSX.Element => {
   const changetheme = (evt: React.ChangeEvent<HTMLSelectElement>) => {
     setTheme(evt.target.value);
     localStorage.setItem("draw-n-code-theme", evt.target.value);
-    // console.log(evt.target.value, currentTheme);
   };
 
+  // font size settings
+  const defaultFontSize: any = localStorage.getItem("draw-n-code-font-size");
+  const [currentFontSize, setFontSize] = useState(
+    defaultFontSize === null ? "16px" : defaultFontSize
+  );
+  const changeFontSize = (evt: React.ChangeEvent<HTMLSelectElement>) => {
+    setFontSize(evt.target.value);
+    localStorage.setItem("draw-n-code-font-size", evt.target.value);
+  };
+  const completeReset = () => {
+    localStorage.clear();
+    setFontSize("16px");
+    setCode("");
+    setTheme("monokai");
+    setLanguage("c_cpp");
+  };
   return (
     <div>
       <div className={"dropdown-wrapper grid-container"}>
@@ -78,12 +103,31 @@ const Editor: React.FC = (): JSX.Element => {
             })}
           </select>
         </div>
+        <div>
+          <label>Font Size:</label>
+          <select
+            onChange={changeFontSize}
+            value={currentFontSize}
+            id={"fonts"}
+          >
+            {fontSizes.map((size: string, id: number) => {
+              return (
+                <option key={size} value={size}>
+                  {size}
+                </option>
+              );
+            })}
+          </select>
+        </div>
+        <div>
+          <button onClick={completeReset}>Reset (WIP!)</button>
+        </div>
       </div>
       <AceEditor
         mode={currentLanguage}
         theme={currentTheme}
         height="95vh"
-        fontSize="16px"
+        fontSize={currentFontSize}
         value={code}
         onChange={onCodeChange}
         setOptions={{
