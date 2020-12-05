@@ -1,6 +1,10 @@
 {
   "name": "draw-and-code",
-  "description": "Draw and explain youe code without pointlessly switching tabs!",
+  "description": "Draw your explanations and type your code in one place, so you don't have to switch tabs again and again!",
+  "author": {
+    "name": "Anik Das",
+    "url": "https://github.com/sadn1ck"
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {

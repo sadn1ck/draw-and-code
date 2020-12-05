@@ -4,17 +4,46 @@ import { useState } from "react";
 import "ace-builds/src-noconflict/mode-java";
 import "ace-builds/src-noconflict/mode-python";
 import "ace-builds/src-noconflict/mode-c_cpp";
+import "ace-builds/src-noconflict/mode-typescript";
+import "ace-builds/src-noconflict/mode-javascript";
+import "ace-builds/src-noconflict/mode-rust";
+import "ace-builds/src-noconflict/mode-css";
+import "ace-builds/src-noconflict/mode-html";
+import "ace-builds/src-noconflict/mode-golang";
+import "ace-builds/src-noconflict/mode-kotlin";
+import "ace-builds/src-noconflict/mode-markdown";
+import "ace-builds/src-noconflict/mode-text";
+
 import "ace-builds/src-noconflict/theme-github";
 import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/src-noconflict/theme-dracula";
+import "ace-builds/src-noconflict/theme-nord_dark";
+import "ace-builds/src-noconflict/theme-solarized_dark";
+import "ace-builds/src-noconflict/theme-xcode";
 
 const languages: Array<Array<string>> = [
   ["c_cpp", "CPP"],
   ["java", "Java"],
   ["python", "Python3"],
+  ["javascript", "JavaScript"],
+  ["typescript", "TypeScript"],
+  ["rust", "Rust"],
+  ["golang", "GoLang"],
+  ["kotlin", "Kotlin"],
+  ["markdown", "Markdown"],
+  ["html", "HTML"],
+  ["css", "CSS"],
+  ["text", "Text"],
 ];
 
-const themes: Array<string> = ["monokai", "dracula", "github"];
+const themes: Array<string> = [
+  "monokai",
+  "dracula",
+  "github",
+  "nord_dark",
+  "solarized_dark",
+  "xcode",
+];
 
 const fontSizes: Array<string> = [
   "10px",

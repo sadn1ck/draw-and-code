@@ -1,12 +1,14 @@
-# [Draw and Code](https://draw-and-code.vercel.app/)
+# [**Draw and Code**](https://draw-and-code.vercel.app/)
 
 > Irritated at switching tabs while explaining code in a presentation? Now you can draw and code in the same tab, easily!
 
-### Screenshot:
+![draw-and-code](https://socialify.git.ci/sadn1ck/draw-and-code/image?description=1&language=1&owner=1&pattern=Floating%20Cogs&stargazers=1&theme=Dark)
+
+## **Screenshot**:
 
 ![](./docs/screen.png)
 
-## Thanks to:
+## **Thanks to**:
 
 - [React Drawing Board by dilidili](https://github.com/dilidili/react-drawing-board)
 
@@ -14,7 +16,7 @@
 
 - [React Sliding Side Panel by BenedictGiraud](https://github.com/BenedicteGiraud/react-sliding-side-panel)
 
-## Development:
+## **Development**:
 
 ### Available Scripts
 
