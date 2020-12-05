@@ -2,7 +2,7 @@
 
 > Irritated at switching tabs while explaining code in a presentation? Now you can draw and code in the same tab, easily!
 
-![draw-and-code](https://socialify.git.ci/sadn1ck/draw-and-code/image?description=1&language=1&owner=1&pattern=Floating%20Cogs&stargazers=1&theme=Dark)
+![draw-and-code](https://socialify.git.ci/sadn1ck/draw-and-code/image?description=1&language=1&owner=1&pattern=Floating%20Cogs&stargazers=1&theme=Dark&forks=1&pulls=1)
 
 ## **Screenshot**:
 

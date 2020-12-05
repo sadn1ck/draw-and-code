@@ -7,7 +7,7 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
   padding: 1rem;
-  background-color: lightcoral;
+  background-color: #aaaaaa;
 }
 .ace_editor {
   width: inherit !important;

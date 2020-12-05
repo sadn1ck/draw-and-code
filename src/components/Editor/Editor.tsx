@@ -1,6 +1,9 @@
 import AceEditor from "react-ace";
 import { useState } from "react";
 
+import "ace-builds/src-min-noconflict/ext-searchbox";
+import "ace-builds/src-noconflict/ext-language_tools";
+
 import "ace-builds/src-noconflict/mode-java";
 import "ace-builds/src-noconflict/mode-python";
 import "ace-builds/src-noconflict/mode-c_cpp";
@@ -154,12 +157,15 @@ const Editor: React.FC = (): JSX.Element => {
       </div>
       <AceEditor
         mode={currentLanguage}
+        name="code-editor-ace"
+        editorProps={{ $blockScrolling: 0 }}
         theme={currentTheme}
         height="95vh"
         fontSize={currentFontSize}
         value={code}
         onChange={onCodeChange}
         setOptions={{
+          enableBasicAutocompletion: true,
           showLineNumbers: true,
           tabSize: 2,
         }}
