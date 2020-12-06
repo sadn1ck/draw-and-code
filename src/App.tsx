@@ -18,7 +18,12 @@ const App: React.FC = (): JSX.Element => {
           <Open />
         </button>
         <div className={"code-editor-wrapper"}>
-          <SlidingPanel type={"right"} isOpen={openPanel} size={60}>
+          <SlidingPanel
+            panelClassName="panel_wrapper"
+            type={"right"}
+            isOpen={openPanel}
+            size={60}
+          >
             <div>
               <Editor />
               <button

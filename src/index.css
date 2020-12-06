@@ -1,7 +1,3 @@
-* {
-  overflow-x: hidden;
-}
-
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -9,9 +5,10 @@
   padding: 1rem;
   background-color: #aaaaaa;
 }
+
 .ace_editor {
   width: inherit !important;
-  height: 95vh !important;
+  height: calc(100vh - 75px) !important;
 }
 
 button:focus {

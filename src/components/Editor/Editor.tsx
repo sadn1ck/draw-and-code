@@ -158,16 +158,19 @@ const Editor: React.FC = (): JSX.Element => {
       <AceEditor
         mode={currentLanguage}
         name="code-editor-ace"
-        editorProps={{ $blockScrolling: 0 }}
         theme={currentTheme}
-        height="95vh"
+        height="90vh"
         fontSize={currentFontSize}
         value={code}
         onChange={onCodeChange}
+        highlightActiveLine={true}
         setOptions={{
           enableBasicAutocompletion: true,
           showLineNumbers: true,
           tabSize: 2,
+          autoScrollEditorIntoView: true,
+          cursorStyle: "slim",
+          wrap: true,
         }}
       />
     </div>
