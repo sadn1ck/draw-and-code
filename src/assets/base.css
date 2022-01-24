@@ -12,5 +12,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: color 0.3s, background-color 0.3s;
-  @apply bg-light-200 dark:bg-dark-500 text-dark-700 dark:text-light-800;
+  @apply bg-light-200;
+}
+button:focus{
+  outline: none;
 }

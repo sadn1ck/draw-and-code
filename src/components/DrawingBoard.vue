@@ -5,6 +5,9 @@ import { useDrauu } from "@vueuse/integrations";
 import { useMagicKeys } from "@vueuse/core";
 import Bar from "./Nav/Bar.vue";
 
+import PencilIcon from "~icons/mdi/pencil";
+import RectIcon from "~icons/mdi/rectangle-outline";
+import EllipseIcon from "~icons/mdi/ellipse-outline";
 import EraseIcon from "~icons/mdi/delete";
 import UndoIcon from "~icons/mdi/undo";
 import RedoIcon from "~icons/mdi/redo";
@@ -23,7 +26,7 @@ watchEffect(() => {
   }
 });
 
-const colors = ref(["#000000", "#ef4444", "#22c55e", "#3b82f6"]);
+const colors = ref(["#000000", "#ef4444", "#22c55e", "#3b82f6", "#fff"]);
 const target = ref();
 
 const sz = ref(3);
@@ -39,7 +42,9 @@ const { undo, redo, canUndo, canRedo, clear, brush } = useDrauu(target, {
   },
 });
 const { mode, color, size } = toRefs(brush);
-
+const setMode = (m) => {
+  mode.value = m;
+};
 const updateColor = (newColor: string) => {
   color.value = newColor;
 };
@@ -49,12 +54,29 @@ const updateSize = () => {
 </script>
 
 <template>
-  <Bar>
+  <Bar class="text-white">
     <div class="bar-contents flex">
-      <button @click="clear" class="text-2xl pr-5 hover:opacity-50">
-        <EraseIcon />
+      <button
+        @click="setMode('stylus')"
+        class="pr-3 text-2xl"
+        :class="[mode === 'stylus' ? 'text-brand' : '']"
+      >
+        <PencilIcon />
       </button>
-
+      <button
+        @click="setMode('rectangle')"
+        class="pr-3 text-2xl"
+        :class="[mode === 'rectangle' ? 'text-brand' : '']"
+      >
+        <RectIcon />
+      </button>
+      <button
+        @click="setMode('ellipse')"
+        class="pr-3 text-2xl"
+        :class="[mode === 'ellipse' ? 'text-brand' : '']"
+      >
+        <EllipseIcon />
+      </button>
       <button
         @click="undo"
         class="text-2xl pr-5 hover:opacity-50"
@@ -78,7 +100,7 @@ const updateSize = () => {
       >
         <div
           :style="{ background: _col }"
-          class="w-6 h-6 border-2 dark:(light-900 opacity-50) rounded-full z-30"
+          class="w-6 h-6 border-2 light-900 rounded-full z-30"
         />
       </button>
       <input
@@ -90,6 +112,11 @@ const updateSize = () => {
         :max="10"
         @change="updateSize"
       />
+
+      <button @click="clear" class="text-2xl pl-5 hover:opacity-50">
+        <EraseIcon />
+      </button>
+
       <div class="flex-grow"></div>
     </div>
   </Bar>
@@ -102,7 +129,7 @@ const updateSize = () => {
 }
 .color-button:hover,
 .color-button.active {
-  @apply bg-light-900 dark:bg-dark-300;
+  @apply bg-light-900;
 }
 
 .clean-center {
