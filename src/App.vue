@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Bar from "./components/Nav/Bar.vue";
 import DrawingBoard from "./components/DrawingBoard.vue";
 import { isDark, toggleDark } from "./composables/dark";
 import { onMounted } from "vue";

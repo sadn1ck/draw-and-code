@@ -17,7 +17,8 @@
     "@vueuse/core": "^7.5.3",
     "@vueuse/integrations": "^7.5.3",
     "pinia": "^2.0.9",
-    "vue": "^3.2.26"
+    "vue": "^3.2.26",
+    "vue3-ace-editor": "^2.2.2"
   },
   "devDependencies": {
     "@cypress/vite-dev-server": "^2.2.2",

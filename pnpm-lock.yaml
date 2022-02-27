@@ -25,6 +25,7 @@ specifiers:
   vite-plugin-windicss: ^1.6.2
   vue: ^3.2.26
   vue-tsc: ^0.29.8
+  vue3-ace-editor: ^2.2.2
   windicss: ^3.4.2
 
 dependencies:
@@ -32,6 +33,7 @@ dependencies:
   '@vueuse/integrations': 7.5.3_vue@3.2.26
   pinia: 2.0.9_typescript@4.5.4+vue@3.2.26
   vue: 3.2.26
+  vue3-ace-editor: 2.2.2
 
 devDependencies:
   '@cypress/vite-dev-server': 2.2.2_vite@2.7.12
@@ -710,6 +712,10 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /ace-builds/1.4.13:
+    resolution: {integrity: sha512-SOLzdaQkY6ecPKYRDDg+MY1WoGgXA34cIvYJNNoBMGGUswHmlauU2Hy0UL96vW0Fs/LgFbMUjD+6vqzWTldIYQ==}
+    dev: false
 
   /acorn-jsx/5.3.2_acorn@8.7.0:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -2763,6 +2769,10 @@ packages:
     dev: false
     optional: true
 
+  /resize-observer-polyfill/1.5.1:
+    resolution: {integrity: sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==}
+    dev: false
+
   /resolve-from/4.0.0:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}
     engines: {node: '>=4'}
@@ -3393,6 +3403,14 @@ packages:
       '@vue/runtime-dom': 3.2.26
       '@vue/server-renderer': 3.2.26_vue@3.2.26
       '@vue/shared': 3.2.26
+    dev: false
+
+  /vue3-ace-editor/2.2.2:
+    resolution: {integrity: sha512-fZ6OWosbU+odLrtrcGC/536QjCigujYJB0Hf6/tBp+ef/ohTadwQAqyBlVzOmvrmzZyubphpV9zkaZcx5Fuivw==}
+    dependencies:
+      ace-builds: 1.4.13
+      resize-observer-polyfill: 1.5.1
+      vue: 3.2.26
     dev: false
 
   /wait-on/6.0.0_debug@4.3.2:
